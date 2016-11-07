@@ -1,0 +1,152 @@
+<html>
+
+<body data-no-turbolink="true">
+	
+<script src="audio1.js"></script>
+<script>
+  audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+</script>
+
+<style media="screen" type="text/css">
+    body {
+        background-color: lavender;
+    }
+    h4 {
+        color: black;
+        text-align: left;
+    	margin-bottom: 2px;
+    	margin-top: 2px;
+    	font-family: "Trebuchet MS", Helvetica, sans-serif;
+    }
+    h5 {
+        color: black;
+        text-align: left;
+    	margin-bottom: 0px;
+    	margin-top: 0px;
+    	font-family: "Trebuchet MS", Helvetica, sans-serif;
+    }
+    h6 {
+        color: black;
+        text-align: left;
+    	margin-bottom: 0px;
+    	margin-top: 0px;
+    	font-family: "Trebuchet MS", Helvetica, sans-serif;
+    }
+    td, th {
+    	color: black;
+		font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		font-size: 15px;
+    	margin-bottom: 0px;
+    	margin-top: 0px;
+    	font-weight: 300;
+    	font-style: normal;
+		margin-left: 0em ;
+		border: 1px solid black;
+		padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+		vertical-align: top;
+    }
+	table {
+	    border-collapse: collapse;
+		border-spacing: 0px;
+	}	
+</style>
+
+<form class="search-form1" method="post" action="searchConcert">
+  <input type="text" id="concert-input" name="queryConcert" />
+  <%= submit_tag "Search Concert" %>
+</form>
+<form class="search-form3" method="post" action="searchArtist">
+  <input type="text" id="artist-input1" name="queryArtist1" />
+  <%= submit_tag "Search Artist (Exact)" %>
+</form>
+
+<form class="search-form2" method="post" action="searchKrithi">
+  <input type="text" id="krithi-input" name="queryKrithi" />
+  <input type="text" id="artist-input" name="queryArtist" />
+  <%= submit_tag "Search Krithi+Artist (Exact)" %>
+</form>
+<form class="search-form4" method="post" action="searchKrithiFuzzy">
+  <input type="text" id="krithi-fuzzy-input" name="queryKrithiFuzzy" />
+  <input type="text" id="artist-fuzzy-input" name="queryArtistFuzzy" />
+  <%= submit_tag "Search Krithi+Artist names (Fuzzy)" %>
+</form>
+<h6> Search Concert by specific ID </h6>
+<h6> Search Artist (Exact) for all Krithis by Artist </h6>
+<h6> Search Krithi+/Artist (Exact) for specific Krithi+Artist combo </h6>
+<h6> Search Krithi+/Artist (Fuzzy) to get exact name of Krithi and/or Artist </h6>
+
+<br>
+
+<% if ($modified_base_link == "null" || $modified_base_link.empty?) %>
+<h4>  </h4> 
+<% elsif %>
+<h4> <%= "Artist: #{$artist}" %> </h4>
+<h4> <%= "Concert ID: #{$concert_id}" %> </h4>
+<h4> <%= "Venue: #{$venue}" %> </h4>
+<h4> <%= "Link: #{$modified_base_link}" %> </h4>
+<p> </p>
+<%end%>
+
+<% $file_name_array.each_with_index do |file, i| %> 
+<p> <%= "[#{i.to_s.rjust(2)}] #{file}" %></p> 
+<audio src= "<%= $file_path_array[i] %>" preload="none">
+</audio>  
+<a href="<%= $file_path_array[i] %>">
+<img src="532.png" alt="Download" style="width:30px;height:20px;border:2;" align=right>
+</a>
+<hr size=1> 
+<% end %>
+</html>
+ 
+
+<table>
+<% if (!$full_array.blank?) %>	
+<h5> <%= $full_array.size%> records found </h5>	
+<% end %>
+<%  $full_array.keys.each do |key| %>
+<tr> 
+<td align = "right">	<%= "#{key}" %> </td> 
+<td align = "left">	<form class="concert-url" method="post" action="searchConcert">  <%= submit_tag "#{$full_array[key][0][0]}" %>
+</form>  </td>
+<td align = "right">	<%= "#{$full_array[key][0][1]}" %> </td>
+<td align = "right">	<%= "#{$full_array[key][0][2]}" %> </td> 
+<td align = "right">	<%= "#{$full_array[key][0][3]}" %> </td>
+<td align = "right">	<%= "#{$full_array[key][0][4]}" %> </td>
+</tr>	
+<% end %>  
+</table> 
+</body> 
+ 
+<table> 
+<% if (!$fuzzy_krithi_array.blank?) %>	
+<h5> <%= $fuzzy_krithi_array.size%> songs found </h5>	
+<% end %>
+<p>
+<%  $fuzzy_krithi_array.each do |cell| %>
+<tr> 
+<td>	<%= "#{cell}" %> </td> 
+</tr>	
+<% end %>  
+</table>
+
+<table> 
+<% if (!$fuzzy_artist_array.blank?) %>	
+<h5> <%= $fuzzy_artist_array.size%> artists found </h5>	
+<% end %>
+<p>
+<%  $fuzzy_artist_array.each do |cell| %>
+<tr> 
+<td>	<%= "#{cell}" %> </td> 
+</tr>	
+<% end %>  
+</table>
+
+<br>
+<form class="clear" method="post" action="clearData">
+  <%= submit_tag "Clear Data" %>
+ 

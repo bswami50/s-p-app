@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta name='Description' content='Sangeethapriya is a non commercial service for the exchange of Indian Classical Music for the sole purpose of research and education.' />
+	<meta name='Keywords' content='sangeethapriya,sangeethamshare,carnatic,music,hindustani,classical,vocal,instrumental' />
+	<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+	<meta name='Robots' content='index,follow' />
+	<meta itemprop='name' content="Sangeethapriya" />
+	<meta itemprop='description' content="Sangeethapriya (www.sangeethapriya.org) is the largest archive of non-commercial carnatic music. Its purpose is to enable exchange of Indian Classical Music for the sole purpose of research and education." />
+	<meta property='og:title' content='Sangeethapriya' />
+	<link rel='canonical' href='https://www.sangeethapriya.org/' />
+	<link rel='alternate' type='application/rss+xml' title='Latest concerts from Sangeethapriya' href='https://www.sangeethapriya.org/rss.php?rss=latest' />
+	<meta property='og:image' content='https://www.sangeethapriya.org/new-template/images/sp-logo-fb-large.jpg' />
+	<meta property='og:url' content='https://www.sangeethapriya.org/' />
+	<meta property='og:updated_time' content='1478381999' />
+	<meta property='og:description' content='Sangeethapriya is the largest archive of non-commercial carnatic music. Its purpose is to enable exchange of non-commercial Indian Classical Music for the sole purpose of research and education.' />
+	<meta property='og:site_name' content='Sangeethapriya - www.sangeethapriya.org' />
+	<link rel='shortcut icon' href='https://www.sangeethapriya.org/new-template/images/favicon.png' type='image/x-icon' />
+	
+<link rel='stylesheet' href='https://www.sangeethapriya.org/new-template/styles.css' type='text/css' />
+<script type='text/javascript' src='https://www.sangeethapriya.org/new-template/jquery-latest.min.js'></script>
+<script type='text/javascript' src='https://www.sangeethapriya.org/new-template/jquery.jcontent.0.8.min.js'></script>
+<script type='text/javascript' src='https://www.sangeethapriya.org/new-template/commentbox.js'></script>
+<script type='text/javascript'>
+	function getCookie(c_name) {
+		var i,x,y,ARRcookies=document.cookie.split(';');
+		for (i=0;i<ARRcookies.length;i++) {
+			x=ARRcookies[i].substr(0,ARRcookies[i].indexOf('='));
+			y=ARRcookies[i].substr(ARRcookies[i].indexOf('=')+1);
+			x=x.replace(/^\s+|\s+$/g,'');
+			if (x==c_name) {
+				return unescape(y);
+			}
+		}
+	}
+	sharebaseurl = 'https://www.sangeethapriya.org/fetch_tracks.php?main_artist1';
+	$(document).ready(function(){
+		if (/opera|chrome|safari/i.test(navigator.userAgent)) event.preventDefault(); //required for proper validation in some browsers
+		$('div#latestuploads').jContent({ orientation: 'vertical', duration: 500, height: 150, width: 200, auto: true, direction: 'next', pause: 5000, pause_on_hover: true, circle: true });
+		$('#modal,#close-button').click(function(){
+			$('#modal').fadeOut();
+		});
+	});
+	setInterval(function () { var d = new Date(); if (getCookie('sessiontime') < Math.round(d.getTime()/1000)) location.href= 'https://www.sangeethapriya.org/login.php?url=' + location.href; },60000);
+	function showlinks(e,fname,mirrorurlstub,mainurl) {
+		if (!e) var e = window.event;
+		//rightclick = false;
+		if (e.which) rightclick = (e.which == 3);
+		else if (e.button) rightclick = (e.button == 2);
+		if (rightclick) {
+			alert('Please do not right click the download icon.\nLeft click it to view the download options.');
+			if (e.preventDefault)
+			e.preventDefault();
+			else
+			e.returnValue= false;
+			return false;
+		}
+		else {
+			$('#title').text('Downloading "'+fname+'"...');
+			$('a.main').attr('href',mainurl);
+			$('a.mirror1').attr('href','http://sangeethapriya.ravisnet.com:8080/cgi-bin/download.cgi?'+mirrorurlstub[0]);
+			$('a.mirror2').attr('href','https://spmirror3.ravisnet.com/cgi-bin/download.cgi?'+mirrorurlstub[1]);
+			$('#modal').fadeIn();
+		}
+	}
+	function previewaudio(file) {
+ 		// window.open('https://www.sangeethapriya.org/preview.php?f='+file, 'previewaudio', 'width=400,height=140');
+	}
+	
+	function playpause(stub, name) {
+ 		file = 'http://sangeethapriya.ravisnet.com:8080/cgi-bin/download.cgi?'+stub;
+		window.open('https://www.sangeethapriya.org/play.php?f='+file+'&n='+name, 'previewaudio', 'width=1024,height=140');
+	}
+	
+	
+	function playall(stub, name) {
+		file = 'http://sangeethapriya.ravisnet.com:8080/cgi-bin/download.cgi?'+stub;
+		window.open('https://www.sangeethapriya.org/new-template/player.php?u='+file+'&n='+name, 'previewaudio', 'width=1024,height=140');
+	}
+	
+	playpause_old = function(stub) {
+		player = document.getElementById('audioplayer');
+		player.src = 'http://sangeethapriya.ravisnet.com:8080/cgi-bin/download.cgi?'+stub;
+		player.load();
+		player.play();
+	}
+</script>
+<title>24 tracks available for Main_artist1: John B Higgins - Sangeethapriya - www.sangeethapriya.org</title></head>
+	<div id="header-wrap"><div id="header-content">
+	<a href="https://www.sangeethapriya.org"><img src="https://www.sangeethapriya.org/new-template/images/logo.jpg" alt="Sangeethapriya" id="logo" class="no-border"/></a>
+	<div id="header-links">
+	<p>
+	
+	<a href="https://www.sangeethapriya.org/policy.php">Terms of Service</a> | 
+	<a href="https://www.sangeethapriya.org/rss.php?rss=latest">RSS</a> | 
+	<a href="https://itunes.apple.com/app/sangeethapriya/id516625641" target="_blank">iOS App</a> | 
+	<a href="https://groups.google.com/group/sangeethapriya" target="_blank">Google Group</a> | 
+	<a href="https://launch.groups.yahoo.com/group/rasikapriya-dot-net/" target="_blank">Yahoo Group</a> |
+	<a href="https://www.sangeethapriya.org/DMCA.php">DMCA</a>
+	</p>
+	</div>
+	<ul>
+	<li><a href="https://www.sangeethapriya.org/homepage.php">Home</a></li>
+	<li><a href="https://www.sangeethapriya.org/Downloads/">Featured Concerts</a></li>
+	<li><a href="https://www.sangeethapriya.org/stream.php">Streaming</a></li>
+	<!--<li><a href="https://www.sangeethapriya.org/top_albums.php">Top Albums</a></li>-->
+	<li><a href="https://www.sangeethapriya.org/search.php">Search & Catalog</a></li>
+	<li><a href="https://www.sangeethapriya.org/lyrics.php">Lyrics</a></li>
+	<li><a href="https://www.sangeethapriya.org/contact.php">Contact</a></li>
+	</ul>
+	</div></div>
+	<div id="modal">
+		<div id="linkbox">
+		<a href="javascript:;"><div id="close-button"></div></a>
+			<div id="links">
+				<div id="title"></div>
+				<a style="" href="#" class="main"><p>Main Server</p></a>
+				<!--<a style="" href="#" class="mirror1"><p>Mirror Server 2</p></a>
+				<a href="#" class="mirror2"><p>Mirror Server 3</p></a>-->
+				<div id="info">Select a link to start the download. For faster downloads, select one of the available mirror server links.</div>
+			</div>
+		</div>
+	</div>
+	<audio id="audioplayer"></audio>
+	<div class="messagebox"><a href="https://www.sangeethapriya.org/stream.php"><h3>Sangeethapriya streaming server has been updated. Click here for the updated configuration details.</h3></a></div><div id="content-wrap"><div id="content"><div id="main" ><h1>24 tracks available for Main_artist1: John B Higgins</h1><div id="searchresults"><a href="display_tracks.php">Click here to perform a new search</a><table><tr><th>Concert ID</th><th>Track</th><th>Kriti</th><th>Ragam</th><th>Composer</th><th>Main Artist</th></tr><tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/243_JonBHiggins-AIR-kIravANi/>23-C0230</a></td><td>1</td><td>amba_nIlayatAkSi</td><td>nIlAmbari</td><td>m_dIkshitar</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/tvg/UPLOADS-0001---0200/071.JOHN_B.HIGGINS/>01-C0583</a></td><td>3</td><td>amba_paradEvatE</td><td>rudrapriyA</td><td>krishnasvAmi_ayya</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/298_JonBHiggins-Ramarao-T_Sankaran/>23-C0284</a></td><td>5</td><td>amma_rAvamma_tulasamma</td><td>kalyANi</td><td>tyAgarAja</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/243_JonBHiggins-AIR-kIravANi/>23-C0230</a></td><td>2</td><td>darini_telusukoNTi_tripurasundarini</td><td>shuddhasAvEri</td><td>tyAgarAja</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/298_JonBHiggins-Ramarao-T_Sankaran/>23-C0284</a></td><td>4</td><td>darini_telusukoNTi_tripurasundarini</td><td>shuddhasAvEri</td><td>tyAgarAja</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/298_JonBHiggins-Ramarao-T_Sankaran/>23-C0284</a></td><td>2</td><td>dinamaNi_vamsha_tilaka</td><td>harikAmbhOji</td><td>tyAgarAja</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/tvg/UPLOADS-0001---0200/071.JOHN_B.HIGGINS/>01-C0583</a></td><td>2</td><td>endarO_mahAnubhAvulu</td><td>shrI</td><td>tyAgarAja</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://sangeethamshare.org/svasu/UPLOADS-0201-0400/0360-Sri_John_Higgins>06-c0305</a></td><td>2</td><td>ennEramum_undan</td><td>dEvagAndhAri</td><td>gOpalakrishna_bharati</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/219_JonBHiggins-kIravANi/>23-C0206</a></td><td>1</td><td>evari_bOdhanavini-VARNAM</td><td>Abhogi</td><td>patnam_subhramanya_iyer</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://sangeethamshare.org/svasu/UPLOADS-0001-0200/0035-John_B.Higgins5-1-07-11.30PM>06-C0028</a></td><td>1</td><td>kaligiyuNTEgadA_galgunu</td><td>kIravANi</td><td>tyAgarAja</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/219_JonBHiggins-kIravANi/>23-C0206</a></td><td>2</td><td>kaligiyuNTEgadA_galgunu</td><td>kIravANi</td><td>tyAgarAja</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/243_JonBHiggins-AIR-kIravANi/>23-C0230</a></td><td>6</td><td>kaligiyuNTEgadA_galgunu</td><td>kIravANi</td><td>tyAgarAja</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/298_JonBHiggins-Ramarao-T_Sankaran/>23-C0284</a></td><td>6</td><td>kaligiyuNTEgadA_galgunu</td><td>kIravANi</td><td>tyAgarAja</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/219_JonBHiggins-kIravANi/>23-C0206</a></td><td>3</td><td>rAgaratna_mAlikacE_ranjillunaTa</td><td>rItigauLa</td><td>tyAgarAja</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/243_JonBHiggins-AIR-kIravANi/>23-C0230</a></td><td>4</td><td>raghupatE_rAma_rAkSasa</td><td>sahAna</td><td>tyAgarAja</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/298_JonBHiggins-Ramarao-T_Sankaran/>23-C0284</a></td><td>7</td><td>samayamidE_rArA</td><td>behAg</td><td>patnam_subhramanya_iyer</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/tvg/UPLOADS-0001---0200/071.JOHN_B.HIGGINS/>01-c0583</a></td><td>4</td><td>shiva_shiva_shiva_yanarAdA</td><td>kAmavardhini</td><td>tyAgarAja</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/243_JonBHiggins-AIR-kIravANi/>23-C0230</a></td><td>5</td><td>shrI_kAmAkSi_kaTAkSi</td><td>vasantA</td><td>subbarAya_shAstri</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/243_JonBHiggins-AIR-kIravANi/>23-C0230</a></td><td>3</td><td>sogasugA_mrudanga_tALamu</td><td>shrIranjani</td><td>tyAgarAja</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/298_JonBHiggins-Ramarao-T_Sankaran/>23-C0284</a></td><td>3</td><td>sogasugA_mrudanga_tALamu</td><td>shrIranjani</td><td>tyAgarAja</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/tvg/UPLOADS-0001---0200/071.JOHN_B.HIGGINS/>01-C0583</a></td><td>1</td><td>tyAgarAja_yOga_vaibhavam</td><td>Anandabhairavi</td><td>m_dIkshitar</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://sangeethamshare.org/svasu/UPLOADS-0201-0400/0360-Sri_John_Higgins>06-C0305</a></td><td>3</td><td>tyAgarAja_yOga_vaibhavam</td><td>Anandabhairavi</td><td>m_dIkshitar</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://sangeethamshare.org/svasu/UPLOADS-0201-0400/0360-Sri_John_Higgins>06-c0305</a></td><td>1</td><td>viribONi_ninnE_kOri-VARNAM</td><td>bhairavi</td><td>pacimiriyam_AdiappaiyA</td><td>John B Higgins</td><td></td></tr>
+<tr><td><a href=http://www.sangeethamshare.org/murthy/Karnatak/UPLOADS-201-400/298_JonBHiggins-Ramarao-T_Sankaran/>23-C0284</a></td><td>1</td><td>viribONi_ninnE_kOri-VARNAM</td><td>bhairavi</td><td>pacimiriyam_AdiappaiyA</td><td>John B Higgins</td><td></td></tr>
+</table></div></div><div id="sidebar"><h1>Latest Uploads</h1><div id='latestuploads' class='clear'><div class='slides'><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=Kalyani Ganesan">Kalyani Ganesan</a></h3>Carnatic Veena<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Nov 05, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5022-Kalyani_Ganesan-Veena/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=DK Pattammal,DK Jayaraman">DK Pattammal,DK Jayaraman</a></h3>Carnatic Vocal<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=03&display=Manjunath Dr B">Manjunath Dr B</a><br/>on Nov 05, 2016<br/><a href="https://www.sangeethamshare.org/manjunath/Carnatic/Audio/UPLOADS-601-900/677-DK_pattammAL-vocal/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=S Balachander">S Balachander</a></h3>Carnatic Veena<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Nov 05, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5023-S_Balachander-Veena-Ragam_24x7/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=Adyar S Jayaraman">Adyar S Jayaraman</a></h3>Carnatic Nadaswaram<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Nov 04, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5020-Adyar_S_Jayaraman-Nadaswaram/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=Geetha Raja">Geetha Raja</a></h3>Carnatic Vocal<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Nov 04, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5021-Geetha_Raja/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=Bhuvaneswari Rajagopalan">Bhuvaneswari Rajagopalan</a></h3>Carnatic Vocal<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Nov 03, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5019-Bhuvaneswari_Rajagopalan/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=BV Raman,BV Lakshmanan">BV Raman,BV Lakshmanan</a></h3>Carnatic Vocal<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=03&display=Manjunath Dr B">Manjunath Dr B</a><br/>on Nov 03, 2016<br/><a href="https://www.sangeethamshare.org/manjunath/Carnatic/Audio/UPLOADS-601-900/676-BV_rAman-BV_lakShmaNan-vocal_duet-Madras-1981/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=TV Sankaranarayanan">TV Sankaranarayanan</a></h3>Carnatic Vocal<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Nov 03, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5018-TV_Sankaranarayanan/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=P Vasanthakumar">P Vasanthakumar</a></h3>Carnatic Veena<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Nov 02, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5017-P_Vasanthakumar-Veena/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=T Brinda,T Muktha">T Brinda,T Muktha</a></h3>Carnatic Vocal<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=03&display=Manjunath Dr B">Manjunath Dr B</a><br/>on Nov 02, 2016<br/><a href="https://www.sangeethamshare.org/manjunath/Carnatic/Audio/UPLOADS-601-900/675-T_brundha-T_muktha-vocal_duet/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=Padma Sankar">Padma Sankar</a></h3>Carnatic Violin<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Nov 01, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5015-Padma_Sankar-Violin/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=Neyveli Santhanagopalan">Neyveli Santhanagopalan</a></h3>Carnatic Vocal<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Nov 01, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5016-Neyveli_Santhanagopalan/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=Dwaram Sathyanarayna Rao">Dwaram Sathyanarayna Rao</a></h3>Carnatic Violin<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Oct 30, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5014-Dwaram_Sathyanarayana_Rao-Violin-24x7/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=Chinmaya Sisters - Uma,Radhika">Chinmaya Sisters - Uma,Radhika</a></h3>Carnatic Vocal<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Oct 30, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5012-Chinmaya_Sisters-Uma_Radhika/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=S Seetharaman">S Seetharaman</a></h3>Carnatic Vocal<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Oct 30, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5013-S_Seetharaman/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=Aruna Sairam">Aruna Sairam</a></h3>Carnatic Vocal<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Oct 28, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5009-Aruna_Sairam-Ragam_24x7/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=Tiruvizha R Jayashankar">Tiruvizha R Jayashankar</a></h3>Carnatic Nadaswaram<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Oct 28, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5010-Tiruvizha_R_Jayashankar-Nadaswaram-Ragam_24x7/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=Niranjana Srinivasan">Niranjana Srinivasan</a></h3>Carnatic Vocal<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=01&display=Gopalakrishnan TV">Gopalakrishnan TV</a><br/>on Oct 28, 2016<br/><a href="https://www.sangeethamshare.org/tvg/UPLOADS-5001---5200/5011-Niranjana_Srinivasan/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=M BalamuraliKrishna">M BalamuraliKrishna</a></h3>Carnatic Vocal<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=22&display=Sreenivasa Murthy">Sreenivasa Murthy</a><br/>on Oct 27, 2016<br/><a href="https://www.sangeethamshare.org/sreenivasa/Dr_M_Balamurali_Krishna/185_The_Flute_that_knows_the_heart_of_Tyagaraja/" class="bold">View Album</a></div></div><div><div class="slidecard"><h3><a href="https://www.sangeethapriya.org/list_albums.php?col=main_artist1&field=TV Gopalakrishnan">TV Gopalakrishnan</a></h3>Carnatic Vocal<br/>Uploaded by<br/><a href="list_albums.php?col=uploader&field=03&display=Manjunath Dr B">Manjunath Dr B</a><br/>on Oct 27, 2016<br/><a href="https://www.sangeethamshare.org/manjunath/Carnatic/Audio/UPLOADS-601-900/674-TV_gOpAlakriShNan-vocal-Cleveland-2002/" class="bold">View Album</a></div></div></div></div><br class='clear'/><h1>Rasikas' Upload Collections</h1><ul class='rasikas-upload'><li class='u bold'>Prolific</li><li class="bold"><a href="https://www.sangeethamshare.org/tvg/">Gopalakrishnan TV</a></li><li class="bold"><a href="https://www.sangeethamshare.org/kasturi/">Kasturi Mambalam</a></li><li class="bold"><a href="https://www.sangeethamshare.org/manjunath/">Manjunath Dr B</a></li><li class="bold"><a href="https://www.sangeethamshare.org/muralidaran/">Muralidaran Iyer</a></li><li class="bold"><a href="https://www.sangeethamshare.org/murthy/">Murthy HMG</a></li><li class="bold"><a href="https://www.sangeethamshare.org/sreenivasa/">Sreenivasa Murthy</a></li><li class="bold"><a href="https://www.sangeethamshare.org/vijayagopal/">Vijayagopal</a></li><li class='u bold'>Others</li><li><a href="https://www.sangeethamshare.org/tnbala/">Bala TN</a></li><li><a href="https://www.sangeethamshare.org/balaji/">Balaji Narayanan</a></li><li><a href="https://www.sangeethamshare.org/chandra/">Chandramouli</a></li><li><a href="https://www.sangeethamshare.org/divakaramenon/">Divakaramenon S</a></li><li><a href="https://www.sangeethamshare.org/hiroshi/">Hiroshi Hemmi </a></li><li><a href="https://www.sangeethamshare.org/ksj/">Jaishankar KS</a></li><li><a href="https://www.sangeethamshare.org/kl/">Karthik KL</a></li><li><a href="https://www.sangeethamshare.org/kovai_jayaraman/">Kovai Jayaraman</a></li><li><a href="https://www.sangeethamshare.org/alpha/">Krishnan (Alpha)</a></li><li><a href="https://www.sangeethamshare.org/kumar/">Kumar Narayanan</a></li><li><a href="https://www.sangeethamshare.org/maninj/">Mani N.J</a></li><li><a href="https://www.sangeethamshare.org/mpmohan/">Mohan MP</a></li><li><a href="https://www.sangeethamshare.org/nagarajan/">Nagarajan A</a></li><li><a href="https://www.sangeethamshare.org/nanda/">Nandakumar</a></li><li><a href="https://www.sangeethamshare.org/nvn/">Narayanan NV</a></li><li><a href="https://www.sangeethamshare.org/nattu/">Natarajan Svaminathan</a></li><li><a href="https://www.sangeethamshare.org/dvprasad/">Prasad DV</a></li><li><a href="https://www.sangeethamshare.org/ksomu/">Radhakrishnan / Srinivasan</a></li><li><a href="https://www.sangeethamshare.org/ppr/">Ragavachary PP</a></li><li><a href="https://www.sangeethamshare.org/vsraghavan/">Raghavan VS</a></li><li><a href="https://www.sangeethamshare.org/raju_ks/">Raj Namboodiri</a></li><li><a href="https://www.sangeethamshare.org/asokan/">Raju Asokan</a></li><li><a href="https://www.sangeethamshare.org/arkay/">Rama Krishnan </a></li><li><a href="https://www.sangeethamshare.org/ramach/">Ramachandran R</a></li><li><a href="https://www.sangeethamshare.org/ramakrishnan_c/">Ramakrishnan C</a></li><li><a href="https://www.sangeethamshare.org/arunachalam/">Raman Arunachalam</a></li><li><a href="https://www.sangeethamshare.org/ramanujam/">Ramanujam Thirumalai</a></li><li><a href="https://www.sangeethamshare.org/ramasamy_v/">Ramasamy V</a></li><li><a href="https://www.sangeethamshare.org/ramasundaram/">Ramasundaram</a></li><li><a href="https://www.sangeethamshare.org/ranganathan/">Ranganathan Prof S</a></li><li><a href="https://www.sangeethamshare.org/rao_sharath/">Rao Sharath</a></li><li><a href="https://www.sangeethamshare.org/ravindran_t/">Ravindran T</a></li><li><a href="https://www.sangeethamshare.org/rmn/">RMN (Mahadevan)</a></li><li><a href="https://www.sangeethamshare.org/nageswaran/">S.Nageswaran</a></li><li><a href="https://www.sangeethamshare.org/sv/">Sangeetha Vidyarthi</a></li><li><a href="https://www.sangeethamshare.org/sankaran/">Sankaran S</a></li><li><a href="https://www.sangeethamshare.org/bssankaran/">Sankaran Srinivasan </a></li><li><a href="https://www.sangeethamshare.org/sarma/">Sarma SNJ</a></li><li><a href="https://www.sangeethamshare.org/sathya/">Sathya (Keyboard)</a></li><li><a href="https://www.sangeethamshare.org/shankar/">Shankar S</a></li><li><a href="https://www.sangeethamshare.org/gvr/">Shyam GVR</a></li><li><a href="https://www.sangeethamshare.org/kaumaram/">Sivakumar T (Kaumaaram)</a></li><li><a href="https://www.sangeethamshare.org/vcsridhar/">Sridhar VC</a></li><li><a href="https://www.sangeethamshare.org/sridharan/">Sridharan Sankaran</a></li><li><a href="https://www.sangeethamshare.org/kss/">Srinivasan KS</a></li><li><a href="https://www.sangeethamshare.org/sripathy/">Sripathy G Raj</a></li><li><a href="https://www.sangeethamshare.org/sriram_ganapathy/">Sriram Ganapathy</a></li><li><a href="https://www.sangeethamshare.org/rbs/">Subramanian RB</a></li><li><a href="https://www.sangeethamshare.org/bhosu/">Sundar Raman</a></li><li><a href="https://www.sangeethamshare.org/vasu/">Vasu Devan</a></li><li><a href="https://www.sangeethamshare.org/svasu/">Vasu S</a></li><li><a href="https://www.sangeethamshare.org/moncov/">Venkat MS</a></li><li><a href="https://www.sangeethamshare.org/kukke/">Vidya Kukke</a></li><li><a href="https://www.sangeethamshare.org/vignesh/">Vignesh</a></li><li><a href="https://www.sangeethamshare.org/vikram/">Vikram K</a></li><li><a href="https://www.sangeethamshare.org/vinod_nn/">Vinod NN</a></li><li><a href="https://www.sangeethamshare.org/vkv/">Viswanathan Dr VK</a></li><li><a href="https://www.sangeethamshare.org/vyshak/">Vyshak</a></li><li><a href="https://www.sangeethamshare.org/sl/">Yessel</a></li></ul><h1>Visitor Information</h1><a class="center" href="https://www3.clustrmaps.com/counter/maps.php?url=https://www.sangeethapriya.org" id="clustrMapsLink"><img class="center" src="https://www3.clustrmaps.com/counter/index2.php?url=https://www.sangeethapriya.org" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror='this.onerror=null; this.src="https://www2.clustrmaps.com/images/clustrmaps-back-soon.jpg"; document.getElementById("clustrMapsLink").href="https://www2.clustrmaps.com";' /></a></div></div></div>
+	<div id="footer-wrap"><div id="footer-content"><div class="col float-left"><h2>Tribute Pages</h2><ul class="columns"><li><a href="https://www.sangeethapriya.org/tributes/thyagaraja/index.html">Sri Thyagaraja Swamy</a></li><li><a href="https://www.sangeethapriya.org/tributes/dikshithar/index.html">Sri Muthuswamy Dikshithar</a></li><li><a href="https://www.sangeethapriya.org/tributes/shyamakrishna/index.html">Sri Shyama Shastri</a></li><li><a href="https://www.sangeethapriya.org/tributes/ovk/index.html">Oottukkadu Sri Venkata Kavi</a></li><li><a href="https://www.sangeethapriya.org/tributes/mss/index.htm">Smt M S Subbulakshmi</a></li></ul></div><div class="col float-left"><h2>&nbsp;</h2><ul class="columns"><li><a href="https://www.sangeethapriya.org/tributes/chembai/index.html">Chembai Sri Vaidyanatha Bagavathar</a></li><li><a href="https://www.sangeethapriya.org/tributes/gnb/index.html">Sri G N Balasubramaniam</a></li><li><a href="https://www.sangeethapriya.org/tributes/embar/index.html">BrahmaSri Embar Vijayaragavachariar</a></li></ul></div><div class="col float-left"><h2>&nbsp;</h2><ul class="columns"><li><a href="https://www.sangeethapriya.org/tributes/dkp/index.htm">Smt D K Pattammal</a></li><li><a href="https://www.sangeethapriya.org/tributes/kvn/index.html">Sri K V Narayanaswamy</a></li><li><a href="https://www.sangeethapriya.org/tributes/ari/index.html">Ariyakudi Sri Ramanuja Iyengar</a></li><li><a href="https://www.sangeethapriya.org/tributes/pazhani/index.html">Pazhani School of Percussion</a></li></ul></div><div class="col2 float-right"><h2>Award Functions</h2><ul class="columns">
+<li><a href="https://www.sangeethapriya.org/award/2008/index.html">Year 2008</a></li>
+<li><a href="https://www.sangeethapriya.org/award/2009/index.html">Year 2009</a></li>
+<li><a href="https://www.sangeethapriya.org/award/2010/index.htm">Year 2010</a></li>
+<li><a href="https://www.sangeethapriya.org/award/2011/index.html">Year 2011</a></li>
+<li><a href="https://www.sangeethapriya.org/award/2012/index.html">Year 2012</a></li>
+<li><a href="https://www.sangeethapriya.org/award/2013/index.html">Year 2013</a></li>
+<li><a href="https://www.sangeethapriya.org/award/2014/index.html">Year 2014</a></li>
+<li><a href="https://www.sangeethapriya.org/award/2015/index.html">Year 2015</a></li>
+</ul></div><div class="col2 float-right"><h2>Season Collections</h2><ul class="columns"><li><a href="https://www.sangeethapriya.org/season2005.html">Music Season 2005 - Chennai</a></li><li><a href="https://www.sangeethapriya.org/season2007.html">Music Season 2007 - Chennai</a></li><li><a href="https://www.sangeethapriya.org/season2009.html">Music Season 2009 - Chennai</a></li><li><a href="https://www.sangeethapriya.org/season2010.html">Music Season 2010 - Chennai</a></li><li><a href="https://www.sangeethapriya.org/season2011.html">Music Season 2011 - Chennai</a></li></ul></div><br class="clear" />
+	<a name="dmca"></a>
+	<div class="justify bold"><h2>Digital Millennium Copyright Act (DMCA)</h2><p>It is our policy to respond to notices of alleged infringement that comply with the Digital Millennium Copyright Act (DMCA). Sangeethapriya.org together with Sangeethamshare.org are Online Service Providers under Title II of the Digital Millennium Copyright Act, 17 U.S.C. Section 512. This policy is intended to implement the procedures set forth in 17 U.S.C. Section 512 and the Digital Millennium Copyright Act ("DMCA") for the reporting of alleged copyright infringement. It is the policy of Sangeethapriya.org to respect the legitimate rights of copyright owners, their agents, and representatives. The uploaders to this site have been made aware that the content uploaded by them should be either non-copyrighted or permissions obtained from copyright owner(s) of the content prior to uploading. To report abuse, owners of the copyrighted material can <a href="https://www.sangeethapriya.org/contact.php">contact us</a>.</p></div>
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-40555491-1', 'sangeethapriya.org');
+	ga('send', 'pageview');
+</script><p class="bold"><center>For best user experience, use a modern browser (<a href="https://www.firefox.com" target="_blank">Firefox</a>, <a href="https://www.google.com/chrome/" target="_blank">Chrome</a>, <a href="https://www.apple.com/safari/" target="_blank">Safari</a>). Recommended minimum screen resolution is 1024x768 pixels.</center></p></div></div></body></html>
