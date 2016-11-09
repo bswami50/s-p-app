@@ -77,7 +77,7 @@
 </form>
 <h6> Search Concert by specific ID </h6>
 <h6> Search Artist (Exact) for all Krithis by Artist </h6>
-<h6> Search Krithi+/Artist (Exact) for specific Krithi+Artist combo </h6>
+<h6> Search Krithi+/Artist (Exact) for specific Krithi and/or Artist combo </h6>
 <h6> Search Krithi+/Artist (Fuzzy) to get exact name of Krithi and/or Artist </h6>
 
 <br>
@@ -101,7 +101,7 @@
 </a>
 <hr size=1> 
 <% end %>
-</html>
+
  
 
 <table>
@@ -120,7 +120,7 @@
 </tr>	
 <% end %>  
 </table> 
-</body> 
+ 
  
 <table> 
 <% if (!$fuzzy_krithi_array.blank?) %>	
@@ -149,4 +149,6 @@
 <br>
 <form class="clear" method="post" action="clearData">
   <%= submit_tag "Clear Data" %>
- 
+</form>
+</body> 
+</html>
