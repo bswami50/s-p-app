@@ -67,7 +67,9 @@ class WelcomeController < ApplicationController
        data["tracks"].each_with_index do |record, i|
         file_name = record["kriti"]
         file_name = file_name.split('_').join(' ').downcase.gsub(' ', '_')
-        file_name = file_name + "-" + record["ragam"]
+        ragam = record["ragam"]
+        ragam = ragam.downcase
+        file_name = file_name + "-" + ragam
         final_file_path = record["url1"]
         $file_path_array.push(final_file_path)
         $file_name_array.push(file_name)
