@@ -2,19 +2,11 @@
 
 <body data-no-turbolink="true">
 
-<script src="jquery.js"></script>
-<script src="mediaelement-and-player.min.js"></script>
-<link rel="stylesheet" href="mediaelementplayer.css" />	
-	
+<script src="audio1.js"></script>
 <script>
-    mejs.i18n.locale.language = 'en'; // Setting German language
-    $('audio,video').mediaelementplayer({
-        success: function(player, node) {
-            $(player).closest('.mejs-container').attr('lang', mejs.i18n.getLanguage());
-            $('html').attr('lang', mejs.i18n.getLanguage());
-            // More code
-        }
-    });
+  audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
 </script>
 	
 <style media="screen" type="text/css">
