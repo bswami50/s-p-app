@@ -2,9 +2,12 @@
 
 <body data-no-turbolink="true">
 	
-<script src="jquery.js"></script>
-<script src="mediaelement-and-player.min.js"></script>
-<link rel="stylesheet" href="mediaelementplayer.css" />
+<script src="audio1.js"></script>
+<script>
+  audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+</script>
 
 <style media="screen" type="text/css">
     body {
@@ -91,7 +94,7 @@
 
 <% $file_name_array.each_with_index do |file, i| %> 
 <p> <%= "[#{i.to_s.rjust(2)}] #{file}" %></p> 
-<audio src= "<%= $file_path_array[i] %>">
+<audio src= "<%= $file_path_array[i] %>" preload="none">
 </audio>  
 <a href="<%= $file_path_array[i] %>">
 <img src="532.png" alt="Download" style="width:30px;height:20px;border:2;" align=right>
