@@ -136,9 +136,9 @@ class WelcomeController < ApplicationController
 #==============================================================================  
   def searchRagam
 
-          initData()
+        initData()
     
-          $ragam = params[:queryRagam].strip
+        $ragam = params[:queryRagam].strip
 
         if(!$ragam.blank?) 
           url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?offset=0&count=200&format=json&ragam=#{$ragam}"
@@ -146,10 +146,18 @@ class WelcomeController < ApplicationController
           response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
           data = JSON.parse(response.body)
  
-          data.each do |record|
-            puts record
+          data.each do |record, i|
+            krithi = record["kriti"].split('_').join(' ').downcase.gsub(' ', '_')
+            ragam = record["ragam"].downcase
+            composer = record["composer"].split('_').join(' ').downcase.gsub(' ', '_')
+            count = record["trackcount"]
+            kid = record["kid"]
+            no = record["no"]
+            $full_array[i].push [no, kid, krithi, ragam, composer, count]         
           end
         end
+    
+    render "index"
   end
   
 #==============================================================================
