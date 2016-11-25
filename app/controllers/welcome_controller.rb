@@ -132,6 +132,25 @@ class WelcomeController < ApplicationController
     render "index"
   end 
   
+#==============================================================================  
+  def searchRagam
+
+          initData()
+    
+          $ragam = params[:queryRagam].strip
+
+        if(!$ragam.blank?) 
+          url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?offset=0&count=200&format=json&ragam=#{$ragam}"
+
+          response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
+          data = JSON.parse(response.body)
+ 
+          data.each do |record|
+            puts record
+          end
+        end
+  end
+  
 #==============================================================================
   
         def searchArtist
