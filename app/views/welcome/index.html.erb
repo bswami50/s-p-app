@@ -122,7 +122,7 @@
 <td align = "right">	<%= "#{$full_array[key][0][2]}" %> </td> 
 <td align = "right">	<%= "#{$full_array[key][0][3]}" %> </td>
 <td align = "right">	<%= "#{$full_array[key][0][4]}" %> </td>
- <% if ($full_array[key][0][7] != "null" || $full_array[key][0][7].empty?) %>	
+ <% if (($full_array[key][0][7] != "null") || !($full_array[key][0][7].empty?)) %>	
  <td> <audio src= "<%= $full_array[key][0][7] %>" preload="none"> </audio> </td>
  <% end %>	
 </tr>	
