@@ -157,7 +157,8 @@ class WelcomeController < ApplicationController
           end
         end
     
-    $full_array = $full_array.sort_by { |k| k[4] }
+    puts $full_array
+    #$full_array = $full_array.sort_by { |k| k[4] }
     
     render "index"
   end
