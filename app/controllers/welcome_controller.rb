@@ -119,10 +119,11 @@ class WelcomeController < ApplicationController
             artist = record["mainartist"]
             genre = record["genre"].downcase
             concert_url = record["url"]
+            track_url = record["audiourl"] 
             if(!$artist.empty?)
-             $full_array[i].push [cid, krithi, ragam, artist, genre, composer, concert_url] unless ($artist != artist)
+             $full_array[i].push [cid, krithi, ragam, artist, genre, composer, concert_url, track_url] unless ($artist != artist)
             elsif
-             $full_array[i].push [cid, krithi, ragam, genre, artist, composer, concert_url]
+             $full_array[i].push [cid, krithi, ragam, genre, artist, composer, concert_url, track_url]
             end
            end
           end
