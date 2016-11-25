@@ -64,7 +64,10 @@
   <input type="text" id="artist-input1" name="queryArtist1" />
   <%= submit_tag "Search Artist (Exact)" %>
 </form>
-
+<form class="search-form21" method="post" action="searchRagam">
+  <input type="text" id="ragam-input" name="queryRagam" />
+  <%= submit_tag "Search Ragam (Exact)" %>
+</form>
 <form class="search-form2" method="post" action="searchKrithi">
   <input type="text" id="krithi-input" name="queryKrithi" />
   <input type="text" id="artist-input" name="queryArtist" />
@@ -77,6 +80,7 @@
 </form>
 <h6> Search Concert by specific ID </h6>
 <h6> Search Artist (Exact) for all Krithis by Artist </h6>
+<h6> Search Ragam (Exact) for all Krithis by Ragam </h6>
 <h6> Search Krithi+/Artist (Exact) for specific Krithi and Artist combo </h6>
 <h6> Search Krithi+/Artist (Fuzzy) to get exact name of Krithi and/or Artist </h6>
 
