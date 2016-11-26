@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   get 'welcome/index' 
   root 'welcome#index'
   
-  get  "/searchConcert"        => "welcome#index"
-  get  "/searchKrithi"         => "welcome#index"
-  get  "/searchArtist"         => "welcome#index"
-  get  "/searchRagam"          => "welcome#index" 
-  get  "/searchKrithiFuzzy"    => "welcome#index"
+  get  "/searchConcert"        => "welcome#clearData"
+  get  "/searchKrithi"         => "welcome#clearData"
+  get  "/searchArtist"         => "welcome#clearData"
+  get  "/searchRagam"          => "welcome#clearData" 
+  get  "/searchKrithiFuzzy"    => "welcome#clearData"
   get  "/clearData"            => "welcome#clearData"
   
   post "searchConcert"         => "welcome#searchConcert"
