@@ -39,6 +39,7 @@ class WelcomeController < ApplicationController
      
     initData()
     
+    #can land here through concert search or concert id is clicked
     if(!params[:queryConcert].nil?)
      $concert_id = params[:queryConcert].strip
     elsif(!params[:commit].nil?)
@@ -91,7 +92,8 @@ class WelcomeController < ApplicationController
           initData()
           kid = 0
          
-          if(!params[:queryKrithi].nil?)
+          #can land here either through kriti search or if kid is clicked
+          if(!params[:queryKrithi].nil?) 
             $krithi = params[:queryKrithi].strip
             $artist = params[:queryArtist].strip
           elsif(!params[:commit].nil?)
@@ -100,7 +102,7 @@ class WelcomeController < ApplicationController
             puts "Invalid Concert ID"
           end
 
-        if(!$krithi.blank?) 
+        if((!$krithi.blank?) || (kid!=0) ) 
           if(kid == 0)
            url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?format=json&kriti=#{$krithi}"
 
