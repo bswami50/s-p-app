@@ -146,7 +146,7 @@ class WelcomeController < ApplicationController
           response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
           data = JSON.parse(response.body)
  
-          puts data.sort_by { |k| k['trackcount'].to_i }
+          data = data.sort_by { |k| k['trackcount'].to_i }.reverse
           
           data.each_with_index do |record, i|
             krithi = record["kriti"].split('_').join(' ').downcase.gsub(' ', '_')
