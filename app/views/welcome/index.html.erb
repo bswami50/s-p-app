@@ -115,14 +115,13 @@
 <%  $full_array.keys.each do |key| %>
 <tr> 
 <td align = "right">	<%= "#{key}" %> </td> 
-<% if($full_array[key][0][0].include? "-")	
+<% if($full_array[key][0][0].include? "-") %>	
  <td align = "left">	<form class="concert-url" method="post" action="searchConcert" target="_blank">  
- <%= submit_tag "#{$full_array[key][0][0]}" %>
+ <%= submit_tag "#{$full_array[key][0][0]}" %> </form>  </td>
 <% else %>
  <td align = "left">	<form class="krithi-id" method="post" action="searchKrithi" target="_blank">  
- <%= submit_tag "#{$full_array[key][0][0]}" %>
-<% end %>	
-</form>  </td>
+ <%= submit_tag "#{$full_array[key][0][0]}" %> </form>  </td>
+<% end %> 	
 <td align = "right">	<%= "#{$full_array[key][0][1]}" %> </td>
 <td align = "right">	<%= "#{$full_array[key][0][2]}" %> </td> 
 <td align = "right">	<%= "#{$full_array[key][0][3]}" %> </td>
