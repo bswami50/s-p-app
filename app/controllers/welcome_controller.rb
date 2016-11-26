@@ -95,20 +95,21 @@ class WelcomeController < ApplicationController
             $krithi = params[:queryKrithi].strip
             $artist = params[:queryArtist].strip
           elsif(!params[:commit].nil?)
-            $krithi = params[:commit].strip
-            $artist = ""
+            kid = params[:commit].strip
           else
             puts "Invalid Concert ID"
           end
 
         if(!$krithi.blank?) 
-          url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?format=json&kriti=#{$krithi}"
+          if(kid == 0)
+           url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?format=json&kriti=#{$krithi}"
 
-          response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
-          data = JSON.parse(response.body)
+           response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
+           data = JSON.parse(response.body)
  
-          data.each do |record|
-           kid = record["kid"] unless (record["trackcount"].to_i == 0) 
+           data.each do |record|
+            kid = record["kid"] unless (record["trackcount"].to_i == 0) 
+           end
           end
 
          if(kid!=0)
