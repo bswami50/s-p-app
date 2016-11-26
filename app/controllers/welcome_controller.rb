@@ -143,7 +143,7 @@ class WelcomeController < ApplicationController
         if(!$ragam.blank?) 
           url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?offset=0&count=200&format=json&ragam=#{$ragam}"
 
-          response = HTTParty.get(url, :headers => {"User-Agent" => "SangeethaPriya/1.1.5 CFNetwork/808.0.2 Darwin/16.0.0"}, follow_redirects: false)
+          response = HTTParty.get(url, headers: {"User-Agent" => "SangeethaPriya/1.1.5 CFNetwork/808.0.2 Darwin/16.0.0"})
           data = JSON.parse(response.body)
  
           data = data.sort_by { |k| k['trackcount'].to_i }.reverse
