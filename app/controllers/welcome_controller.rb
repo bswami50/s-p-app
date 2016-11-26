@@ -165,7 +165,7 @@ class WelcomeController < ApplicationController
             count = record["trackcount"]
             kid = record["kid"]
             no = record["no"]
-            $full_array[i].push [kid, krithi, ragam, composer, count]         
+            $full_array[i].push [kid, krithi, ragam, composer, count]  unless ($ragam != ragam) #json search is fuzzy       
           end
         end    
     render "index"
