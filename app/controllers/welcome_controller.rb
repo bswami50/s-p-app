@@ -146,6 +146,8 @@ class WelcomeController < ApplicationController
           response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
           data = JSON.parse(response.body)
  
+          puts data
+          
           data.each_with_index do |record, i|
             krithi = record["kriti"].split('_').join(' ').downcase.gsub(' ', '_')
             ragam = record["ragam"].downcase
@@ -153,13 +155,9 @@ class WelcomeController < ApplicationController
             count = record["trackcount"]
             kid = record["kid"]
             no = record["no"]
-            $full_array[count].push [kid, krithi, ragam, composer, count]         
+            $full_array[i].push [kid, krithi, ragam, composer, count]         
           end
-        end
-    
-    $full_array_new = $full_array.sort_by { |k| [k[4], k[0]] }
-    puts $full_array_new
-    
+        end    
     render "index"
   end
   
