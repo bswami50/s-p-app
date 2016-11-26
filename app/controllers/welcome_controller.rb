@@ -91,8 +91,15 @@ class WelcomeController < ApplicationController
           initData()
           kid = 0
          
-          $krithi = params[:queryKrithi].strip
-          $artist = params[:queryArtist].strip
+          if(!params[:queryKrithi].nil?)
+            $krithi = params[:queryKrithi].strip
+            $artist = params[:queryArtist].strip
+          elsif(!params[:commit].nil?)
+            $krithi = params[:commit].strip
+            $artist = ""
+          else
+            puts "Invalid Concert ID"
+          end
 
         if(!$krithi.blank?) 
           url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?format=json&kriti=#{$krithi}"
