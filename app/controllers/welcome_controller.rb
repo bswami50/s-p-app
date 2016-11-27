@@ -101,6 +101,8 @@ class WelcomeController < ApplicationController
           else
             puts "Invalid Concert ID"
           end
+          
+          system("which curl")
 
         if((!$krithi.blank?) || (kid!=0) ) 
           if(kid == 0)
