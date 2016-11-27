@@ -111,7 +111,7 @@ class WelcomeController < ApplicationController
  
            cmd = "curl --output \"tmp_op\" #{url}"
            system(cmd) 
-           system("sleep 2")  
+           system("sleep 5")  
            
            file = File.read("tmp_op")
            data = JSON.parse(file)
