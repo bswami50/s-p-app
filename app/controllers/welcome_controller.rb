@@ -101,8 +101,6 @@ class WelcomeController < ApplicationController
           else
             puts "Invalid Concert ID"
           end
-          
-          system("which curl")
 
         if((!$krithi.blank?) || (kid!=0) ) 
           if(kid == 0)
@@ -111,6 +109,10 @@ class WelcomeController < ApplicationController
            response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
            data = JSON.parse(response.body)
  
+           cmd = "curl --output \"tmp\" url"
+           system(cmd) 
+           system(cat tmp)
+            
            data.each do |record|
             kid = record["kid"] unless (record["trackcount"].to_i == 0) 
            end
