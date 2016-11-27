@@ -109,9 +109,9 @@ class WelcomeController < ApplicationController
            response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
            data = JSON.parse(response.body)
  
-           cmd = "curl --output \"tmp\" #{url}"
+           cmd = "curl --output \"tmp_op\" #{url}"
            system(cmd) 
-           system(cat tmp)
+           system("cat tmp")
             
            data.each do |record|
             kid = record["kid"] unless (record["trackcount"].to_i == 0) 
