@@ -116,6 +116,8 @@ class WelcomeController < ApplicationController
            file = File.read("tmp_op")
            data = JSON.parse(file)
             
+           puts data
+            
            data.each do |record|
             kid = record["kid"] unless (record["trackcount"].to_i == 0) 
            end
