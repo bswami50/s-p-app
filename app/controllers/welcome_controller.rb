@@ -10,8 +10,7 @@ $fuzzy_artist_array = Array.new(0)
 $krithi = ''
 $full_array = Hash.new{|hsh,key| hsh[key] = [] }
 NUM_FIELDS = 7
-#@user_agent = "SangeethaPriya/1.1.5 CFNetwork/808.0.2 Darwin/16.0.0"
-@user_agent = "Test"
+@user_agent = "SangeethaPriya/1.1.5 CFNetwork/808.0.2 Darwin/16.0.0"
 @user_agent_play = "AppleCoreMedia/1.0.0.14A456 (iPhone; U; CPU OS 10_0_2 like Mac OS X; en_us)"
 
 class WelcomeController < ApplicationController
