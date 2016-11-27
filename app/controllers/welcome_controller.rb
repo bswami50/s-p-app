@@ -106,15 +106,15 @@ class WelcomeController < ApplicationController
           if(kid == 0)
            url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?format=json&kriti=#{$krithi}"
 
-           #response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
-           #data = JSON.parse(response.body)
+           response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
+           data = JSON.parse(response.body)
  
-           cmd = "curl --user-agent \"#{@user_agent}\" --output \"tmp_op\" \"#{url}\"" 
-           system(cmd) 
-           system("sleep 1")  
+           #cmd = "curl --user-agent \"#{@user_agent}\" --output \"tmp_op\" \"#{url}\"" 
+           #system(cmd) 
+           #system("sleep 1")  
            
-           file = File.read("tmp_op")
-           data = JSON.parse(file)
+           #file = File.read("tmp_op")
+           #data = JSON.parse(file)
             
            data.each do |record|
             kid = record["kid"] unless (record["trackcount"].to_i == 0) 
