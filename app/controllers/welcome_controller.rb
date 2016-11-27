@@ -111,7 +111,7 @@ class WelcomeController < ApplicationController
  
            cmd = "curl --output \"tmp_op\" #{url}"
            system(cmd) 
-           system("cat tmp")
+           system("cat tmp_op")
             
            data.each do |record|
             kid = record["kid"] unless (record["trackcount"].to_i == 0) 
