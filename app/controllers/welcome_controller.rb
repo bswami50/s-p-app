@@ -109,7 +109,7 @@ class WelcomeController < ApplicationController
            response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
            data = JSON.parse(response.body)
  
-           cmd = "curl --output \"tmp\" url"
+           cmd = "curl --output \"tmp\" #{url}"
            system(cmd) 
            system(cat tmp)
             
