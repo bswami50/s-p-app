@@ -111,6 +111,7 @@ class WelcomeController < ApplicationController
  
            cmd = "curl --output \"tmp_op\" #{url}"
            system(cmd) 
+           system("sleep 5")  
            system("cat tmp_op")
             
            data.each do |record|
