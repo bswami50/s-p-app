@@ -10,8 +10,8 @@ $fuzzy_artist_array = Array.new(0)
 $krithi = ''
 $full_array = Hash.new{|hsh,key| hsh[key] = [] }
 NUM_FIELDS = 7
-@user_agent = "SangeethaPriya/1.1.5 CFNetwork/808.0.2 Darwin/16.0.0"
-@user_agent_play = "AppleCoreMedia/1.0.0.14A456 (iPhone; U; CPU OS 10_0_2 like Mac OS X; en_us)"
+$user_agent = "SangeethaPriya/1.1.5 CFNetwork/808.0.2 Darwin/16.0.0"
+$user_agent_play = "AppleCoreMedia/1.0.0.14A456 (iPhone; U; CPU OS 10_0_2 like Mac OS X; en_us)"
 $ragas = YAML.load_file('public/raga.yml')
 
 class WelcomeController < ApplicationController
@@ -54,7 +54,7 @@ class WelcomeController < ApplicationController
     if(!$concert_id.blank?)    
           
       url = "https://www.sangeethamshare.org/mccbala/scripts/api/view/album/#{cid[0]}/#{cid[1]}/?format=json"
-      response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
+      response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
       data = JSON.parse(response.body)
       #puts JSON.pretty_generate(data)
     
@@ -107,10 +107,10 @@ class WelcomeController < ApplicationController
           if(kid == 0)
            url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?format=json&kriti=#{$krithi}"
 
-           response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
+           response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
            data = JSON.parse(response.body)
  
-           #cmd = "curl --user-agent \"#{@user_agent}\" --output \"tmp_op\" \"#{url}\"" 
+           #cmd = "curl --user-agent \"#{$user_agent}\" --output \"tmp_op\" \"#{url}\"" 
            #system(cmd) 
            #system("sleep 1")  
            
@@ -125,7 +125,7 @@ class WelcomeController < ApplicationController
          if(kid!=0)
           url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/track/?offset=0&count=200&kid=#{kid}&format=json"
 
-           response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
+           response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
            data = JSON.parse(response.body)
            #puts JSON.pretty_generate(data)
 
@@ -161,7 +161,7 @@ class WelcomeController < ApplicationController
         if(!$ragam.blank?) 
           url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?offset=0&count=200&format=json&ragam=#{$ragam}"
 
-          response = HTTParty.get(url, :headers => {"User-Agent" => "#{@user_agent}"}, follow_redirects: false)
+          response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
           data = JSON.parse(response.body)
  
           data = data.sort_by { |k| k['trackcount'].to_i }.reverse
