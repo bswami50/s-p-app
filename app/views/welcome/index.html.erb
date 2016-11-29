@@ -162,5 +162,10 @@
 </form>
 </body> 
 
+<% content_for :javascript_ready do %>
+  $("#ragam-input").autocomplete({
+    source: <%= ($ragas["melakartas"] + $ragas["janyas"]).to_json.html_safe %>
+  });
+<% end %>
 
 
