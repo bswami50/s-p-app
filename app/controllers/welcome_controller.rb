@@ -176,7 +176,8 @@ class WelcomeController < ApplicationController
             $full_array[i].push [kid, krithi, ragam, composer, count]  unless ($ragam != ragam) #json search is fuzzy       
           end
         end    
-    puts @ragas
+    puts "Here"
+    puts @ragas, $ragam
     render "index"
   end
   
