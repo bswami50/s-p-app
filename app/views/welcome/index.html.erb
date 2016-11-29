@@ -166,6 +166,7 @@
   $(function () {
   $("#ragam-input").autocomplete({
     source: <%= ($ragas["melakartas"] + $ragas["janyas"]).to_json.html_safe %>
+   });
   });
 </script>
 
