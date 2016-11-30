@@ -52,30 +52,33 @@
    table {
 	    border-collapse: collapse;
             border-spacing: 0px;
-	}	
-   .ui-widget { 
+	}		
+   .ui-autocomplete { 
 	   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	   font-size: 13px;
 	}
+    .ui-autocomplete .ui-menu-item .ui-state-focus {
+	   color: blue;
+     }
 	
 </style>
 
 <form class="search-form1" method="post" action="searchConcert">
   <input type="text" id="concert-input" name="queryConcert" />
-  <%= submit_tag "Search Concert ID (exact)" %>
+  <%= submit_tag "Search Concert ID" %>
 </form>
 <form class="search-form3" method="post" action="searchArtist">
   <input type="text" id="artist-input1" name="queryArtist1" />
-  <%= submit_tag "Search Artist (Exact)" %>
+  <%= submit_tag "Search Artist" %>
 </form>
 <form class="search-form21" method="post" action="searchRagam">
   <input type="text" id="ragam-input" name="queryRagam" class="ui-autocomplete-input" autocomplete="on" >
-  <%= submit_tag "Search Ragam (Exact)" %>
+  <%= submit_tag "Search Ragam" %>
 </form>
 <form class="search-form2" method="post" action="searchKrithi">
   <input type="text" id="krithi-input" name="queryKrithi" />
   <input type="text" id="artist-input" name="queryArtist" />
-  <%= submit_tag "Search Krithi+Artist (Exact)" %>
+  <%= submit_tag "Search Krithi (+Artist)" %>
 </form>
 <h6> Search Concert by specific ID </h6>
 <h6> Search Artist for all Krithis by Artist </h6>
