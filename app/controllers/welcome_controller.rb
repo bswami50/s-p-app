@@ -245,34 +245,6 @@ class WelcomeController < ApplicationController
 
 
 #==============================================================================   
-
-  def searchKrithiFuzzy
-      
-    krithi = params[:queryKrithiFuzzy].strip
-    artist = params[:queryArtistFuzzy].strip
-    initData()
-    
-    if(!krithi.blank?)
-     File.open('public/sp_db_krithi.txt', "r") do |f|
-     f.each_line do |line|
-       $fuzzy_krithi_array.push line.split('_').join(' ').downcase.gsub(' ', '_') unless !line.downcase.include? krithi.downcase    
-      end   
-     end
-    end
-
-    if(!artist.blank?)
-     File.open('public/sp_db_artist.txt', "r") do |f|
-     f.each_line do |line|
-      $fuzzy_artist_array.push line unless !line.downcase.include? artist.downcase    
-      end   
-     end
-    end
-    
-    render "index"
-    
-  end  
-  
-  #===================================================
   
   def clearData
     
