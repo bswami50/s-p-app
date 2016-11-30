@@ -77,21 +77,13 @@
   <input type="text" id="artist-input" name="queryArtist" />
   <%= submit_tag "Search Krithi+Artist (Exact)" %>
 </form>
-<form class="search-form4" method="post" action="searchKrithiFuzzy">
-  <input type="text" id="krithi-fuzzy-input" name="queryKrithiFuzzy" />
-  <input type="text" id="artist-fuzzy-input" name="queryArtistFuzzy" />
-  <%= submit_tag "Search Krithi+Artist (Fuzzy)" %>
-</form>
 <h6> Search Concert by specific ID </h6>
-<h6> Search Artist (Exact) for all Krithis by Artist </h6>
-<h6> Search Ragam (Exact) for all Krithis by Ragam </h6>
-<h6> Search Krithi+/Artist (Exact) for specific Krithi and Artist combo </h6>
-<h6> Search Krithi+/Artist (Fuzzy) to get exact name of Krithi and/or Artist </h6>
-
+<h6> Search Artist for all Krithis by Artist </h6>
+<h6> Search Ragam for all Krithis by Ragam </h6>
+<h6> Search Krithi (and Artist) for specific Krithi (and Artist combo) </h6>
 <br>
 
 <!-- Concert page -->
-
 <% if ($modified_base_link == "null" || $modified_base_link.empty?) %>
 <h5>  </h5> 
 <% elsif %>
@@ -113,7 +105,6 @@
 <% end %>
 
  <!-- Main table -->
-
 <table>
 <% if (!$full_array.blank?) %>	
 <h5> <%= $full_array.size%> records found </h5>	
@@ -139,31 +130,6 @@
 <% end %>  
 </table> 
  
-<!-- Fuzzy search results --> 
-<table> 
-<% if (!$fuzzy_krithi_array.blank?) %>	
-<h5> <%= $fuzzy_krithi_array.size%> songs found </h5>	
-<% end %>
-<p>
-<%  $fuzzy_krithi_array.each do |cell| %>
-<tr> 
-<td>	<%= "#{cell}" %> </td> 
-</tr>	
-<% end %>  
-</table>
-
-<table> 
-<% if (!$fuzzy_artist_array.blank?) %>	
-<h5> <%= $fuzzy_artist_array.size%> artists found </h5>	
-<% end %>
-<p>
-<%  $fuzzy_artist_array.each do |cell| %>
-<tr> 
-<td>	<%= "#{cell}" %> </td> 
-</tr>	
-<% end %>  
-</table>
-
 <br>
 <form class="clear" method="post" action="clearData">
   <%= submit_tag "Clear Data" %>
