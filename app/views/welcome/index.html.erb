@@ -176,4 +176,12 @@
   });
 </script>
 
+<script type="text/javascript">
+  $(function () {
+  $("#artist-input1").autocomplete({
+    source: <%= ($artists["artist"]).to_json.html_safe %>
+   });
+  });
+</script>
+
 
