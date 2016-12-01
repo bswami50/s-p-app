@@ -190,7 +190,7 @@ class WelcomeController < ApplicationController
         $composer = params[:queryComposer].strip
 
         if(!$composer.blank?) 
-          url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?offset=0&count=200&format=json&composer=#{$composer}"
+          url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?offset=0&count=500&format=json&composer=#{$composer}"
 
           response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
           data = JSON.parse(response.body)
