@@ -178,10 +178,37 @@ class WelcomeController < ApplicationController
             $full_array[i].push [kid, krithi, ragam, composer, count]  unless ($ragam != ragam) #json search is fuzzy       
           end
         end    
-    puts "Here"
-    puts $ragas, $ragam
     render "index"
   end
+#==============================================================================
+  
+   def searchComposer
+
+        initData()
+    
+        $composer = params[:queryComposer].strip
+
+        if(!$composer.blank?) 
+          url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?offset=0&count=50&format=json&composer=#{$composer}"
+
+          response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
+          data = JSON.parse(response.body)
+ 
+          data = data.sort_by { |k| k['trackcount'].to_i }.reverse
+          
+          data.each_with_index do |record, i|
+            krithi = record["kriti"].split('_').join(' ').downcase.gsub(' ', '_')
+            ragam = record["ragam"].downcase
+            composer = record["composer"].split('_').join(' ').downcase.gsub(' ', '_')
+            count = record["trackcount"]
+            kid = record["kid"]
+            no = record["no"]
+            $full_array[i].push [kid, krithi, ragam, composer, count]  unless ($composer != composer) #json search is fuzzy       
+          end
+        end    
+    render "index"
+  end
+  
   
 #==============================================================================
   
