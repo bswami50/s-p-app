@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post "searchConcert"         => "welcome#searchConcert"
   post "searchKrithi"          => "welcome#searchKrithi"
   post "searchRagam"           => "welcome#searchRagam" 
-  get  "searchComposer"        => "welcome#searchComposer"
+  post "searchComposer"        => "welcome#searchComposer"
   post "searchArtist"          => "welcome#searchArtist"
   post "clearData"             => "welcome#clearData"               
 end
