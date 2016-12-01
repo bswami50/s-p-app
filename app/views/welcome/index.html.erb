@@ -68,8 +68,12 @@
   <%= submit_tag "Search Artist" %>
 </form>
 <form class="search-form21" method="post" action="searchRagam">
-  <input type="text" id="ragam-input" name="queryRagam" class="ui-autocomplete-input" autocomplete="on" >
+  <input type="text" id="ragam-input" name="queryRagam">
   <%= submit_tag "Search Ragam" %>
+</form>
+<form class="search-form22" method="post" action="searchComposer">
+  <input type="text" id="composer-input" name="queryComposer">
+  <%= submit_tag "Search Composer" %>
 </form>
 <form class="search-form2" method="post" action="searchKrithi">
   <input type="text" id="krithi-input" name="queryKrithi" />
@@ -155,6 +159,14 @@
   $(function () {
   $("#artist-input").autocomplete({
     source: <%= ($artists["artist"]).to_json.html_safe %>
+   });
+  });
+</script>
+
+<script type="text/javascript">
+  $(function () {
+  $("#composer-input").autocomplete({
+    source: <%= ($composers["composer"]).to_json.html_safe %>
    });
   });
 </script>
