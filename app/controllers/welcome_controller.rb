@@ -15,6 +15,7 @@ $user_agent_play = "AppleCoreMedia/1.0.0.14A456 (iPhone; U; CPU OS 10_0_2 like M
 $ragas = YAML.load_file('public/raga.yml')
 $krithis = YAML.load_file('public/krithi.yml')
 $artists = YAML.load_file('public/artist.yml')
+$composers = YAML.load_file('public/composer.yml')
 
 class WelcomeController < ApplicationController
   skip_before_action :verify_authenticity_token
