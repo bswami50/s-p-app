@@ -115,13 +115,17 @@ class WelcomeController < ApplicationController
  
            #cmd = "curl --user-agent \"#{$user_agent}\" --output \"tmp_op\" \"#{url}\"" 
            #system(cmd) 
-           #system("sleep 1")  
-           
+           #system("sleep 1")        
            #file = File.read("tmp_op")
            #data = JSON.parse(file)
-            
+           
+           max_krithi_count = 0 #pick krithi with most tracks (among multiple ones)           
            data.each do |record|
-            kid = record["kid"] unless (record["trackcount"].to_i == 0) 
+            tmp_kid = record["kid"] unless (record["trackcount"].to_i == 0)
+             if(record["trackcount"].to_i > max_krithi_count)
+               kid = tmp_kid
+               max_krithi_count = record["trackcount"].to_i
+             end  
            end
           end
 
