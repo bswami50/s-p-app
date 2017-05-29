@@ -145,6 +145,8 @@ class WelcomeController < ApplicationController
             genre = record["genre"].downcase
             concert_url = record["url"]
             track_url = record["audiourl"] 
+            track_url.gsub! 'spmirror3.ravisnet.com/sangeethamshare.org/public_html','www.sangeethamshare.org') 
+            track_url += '?type=streaming1234567890'
             if(!$artist.empty?)
              $full_array[i].push [cid, krithi, ragam, artist, genre, composer, concert_url, track_url] unless ($artist != artist)
             elsif
