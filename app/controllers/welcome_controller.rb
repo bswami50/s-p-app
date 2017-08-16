@@ -114,12 +114,6 @@ class WelcomeController < ApplicationController
 
            response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
            data = JSON.parse(response.body)
- 
-           #cmd = "curl --user-agent \"#{$user_agent}\" --output \"tmp_op\" \"#{url}\"" 
-           #system(cmd) 
-           #system("sleep 1")        
-           #file = File.read("tmp_op")
-           #data = JSON.parse(file)
            
            max_krithi_count = 0 #pick krithi with most tracks (among multiple ones)           
            data.each do |record|
