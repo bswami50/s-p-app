@@ -1,2 +1,2 @@
 # README
-# s-p-app
+# An easier interface for Sangeethapriya 
