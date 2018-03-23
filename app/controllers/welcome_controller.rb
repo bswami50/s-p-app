@@ -56,7 +56,7 @@ class WelcomeController < ApplicationController
     
     if(!$concert_id.blank?)    
           
-      url = "https://www.sangeethamshare.org/mccbala/scripts/api/view/album/#{cid[0]}/#{cid[1]}/?format=json"
+      url = "http://www.sangeethamshare.org/mccbala/scripts/api/view/album/#{cid[0]}/#{cid[1]}/?format=json"
       response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
       data = JSON.parse(response.body)
       #puts JSON.pretty_generate(data)
@@ -110,7 +110,7 @@ class WelcomeController < ApplicationController
 
         if((!$krithi.blank?) || (kid!=0) ) 
           if(kid == 0)
-           url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?format=json&kriti=#{$krithi}"
+           url = "http://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?format=json&kriti=#{$krithi}"
 
            response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
            data = JSON.parse(response.body)
@@ -126,7 +126,7 @@ class WelcomeController < ApplicationController
           end
 
          if(kid!=0)
-          url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/track/?offset=0&count=200&kid=#{kid}&format=json"
+          url = "http://www.sangeethamshare.org/mccbala/scripts/api/list/track/?offset=0&count=200&kid=#{kid}&format=json"
 
            response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
            data = JSON.parse(response.body)
@@ -164,7 +164,7 @@ class WelcomeController < ApplicationController
         $ragam = params[:queryRagam].strip
 
         if(!$ragam.blank?) 
-          url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?offset=0&count=200&format=json&ragam=#{$ragam}"
+          url = "http://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?offset=0&count=200&format=json&ragam=#{$ragam}"
 
           response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
           data = JSON.parse(response.body)
@@ -192,7 +192,7 @@ class WelcomeController < ApplicationController
         $composer = params[:queryComposer].strip
 
         if(!$composer.blank?) 
-          url = "https://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?offset=0&count=500&format=json&composer=#{$composer}"
+          url = "http://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?offset=0&count=500&format=json&composer=#{$composer}"
 
           response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
           data = JSON.parse(response.body)
@@ -227,11 +227,11 @@ class WelcomeController < ApplicationController
           $artist = params[:queryArtist1].strip
 
           if(!$artist.blank?)
-           uri = URI('https://www.sangeethapriya.org/fetch_tracks.php?main_artist1')
+           uri = URI('http://www.sangeethapriya.org/fetch_tracks.php?main_artist1')
            req = Net::HTTP::Post.new(uri)
            req.set_form_data('FIELD_TYPE' => $artist) 
 
-           res = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => true) do |http|
+           res = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => false) do |http|
             http.request(req)
            end
 
