@@ -227,11 +227,11 @@ class WelcomeController < ApplicationController
           $artist = params[:queryArtist1].strip
 
           if(!$artist.blank?)
-           uri = URI('http://www.sangeethapriya.org/fetch_tracks.php?main_artist1')
+           uri = URI('https://www.sangeethapriya.org/fetch_tracks.php?main_artist1')
            req = Net::HTTP::Post.new(uri)
            req.set_form_data('FIELD_TYPE' => $artist) 
 
-           res = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => false) do |http|
+           res = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => true) do |http|
             http.request(req)
            end
 
