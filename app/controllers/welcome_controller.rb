@@ -57,7 +57,7 @@ class WelcomeController < ApplicationController
     if(!$concert_id.blank?)    
           
       url = "http://www.sangeethamshare.org/mccbala/scripts/api/view/album/#{cid[0]}/#{cid[1]}/?format=json"
-      response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
+      response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: true)
       data = JSON.parse(response.body)
       #puts JSON.pretty_generate(data)
     
@@ -77,7 +77,7 @@ class WelcomeController < ApplicationController
         file_name = file_name + "-" + ragam
         final_file_path = record["url1"]
         final_file_path.gsub! 'spmirror3.ravisnet.com','sangeethapriya.ravisnet.com:8080' #new format (June 2017)
-        #final_file_path.gsub! 'http', 'https' 
+        final_file_path.gsub! 'http', 'https' 
         $file_path_array.push(final_file_path)
         $file_name_array.push(file_name)
       end
@@ -112,7 +112,7 @@ class WelcomeController < ApplicationController
           if(kid == 0)
            url = "http://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?format=json&kriti=#{$krithi}"
 
-           response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
+           response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: true)
            data = JSON.parse(response.body)
            
            max_krithi_count = 0 #pick krithi with most tracks (among multiple ones)           
@@ -128,7 +128,7 @@ class WelcomeController < ApplicationController
          if(kid!=0)
           url = "http://www.sangeethamshare.org/mccbala/scripts/api/list/track/?offset=0&count=200&kid=#{kid}&format=json"
 
-           response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
+           response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: true)
            data = JSON.parse(response.body)
            #puts JSON.pretty_generate(data)
 
@@ -142,7 +142,7 @@ class WelcomeController < ApplicationController
             concert_url = record["url"]
             track_url = record["audiourl"] 
             track_url.gsub! 'spmirror3.ravisnet.com','sangeethapriya.ravisnet.com:8080' #new format (June 2017)
-            #track_url.gsub! 'http', 'https' 
+            track_url.gsub! 'http', 'https' 
             if(!$artist.empty?)
              $full_array[i].push [cid, krithi, ragam, artist, genre, composer, concert_url, track_url] unless ($artist != artist)
             elsif
@@ -166,7 +166,7 @@ class WelcomeController < ApplicationController
         if(!$ragam.blank?) 
           url = "http://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?offset=0&count=200&format=json&ragam=#{$ragam}"
 
-          response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
+          response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: true)
           data = JSON.parse(response.body)
  
           data = data.sort_by { |k| k['trackcount'].to_i }.reverse
@@ -194,7 +194,7 @@ class WelcomeController < ApplicationController
         if(!$composer.blank?) 
           url = "http://www.sangeethamshare.org/mccbala/scripts/api/list/kriti/?offset=0&count=500&format=json&composer=#{$composer}"
 
-          response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: false)
+          response = HTTParty.get(url, :headers => {"User-Agent" => "#{$user_agent}"}, follow_redirects: true)
           data = JSON.parse(response.body)
  
           data = data.sort_by { |k| k['trackcount'].to_i }.reverse
