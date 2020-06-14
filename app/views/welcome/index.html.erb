@@ -98,7 +98,7 @@
 <%end%>
 
 <% $file_name_array.each_with_index do |file, i| %> 
-<p> <%= "[#{i.to_s.rjust(2)}] #{file}" %></p> 
+<h5> <%= "[#{i.to_s.rjust(2)}] #{file}" %></h5> 
 <audio src= "<%= $file_path_array[i] %>" preload="none">
 </audio>  
 <a href="<%= $file_path_array[i] %>">
@@ -106,6 +106,17 @@
 </a>
 <hr size=1> 
 <% end %>
+
+<style>
+p.dashed {border-style: solid; border-radius: 5px; border-width: 2px}
+</style>
+
+<% $file_name_array.each_with_index do |file, i| %> 
+<p class="dashed">
+<code> curl -o <%= "#{file}"+".mp3" %> "<%= $file_path_array[i] %>" </code> 
+</p>
+<% end %>
+
 
  <!-- Main table -->
 <table>
